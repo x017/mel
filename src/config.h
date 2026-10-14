@@ -26,6 +26,9 @@ typedef struct {
     /* behavior */
     int bell_on_fail; int timeout; char message[128]; char on_unlock[512];
     char theme[64]; double scale;
+    /* v0.2 */
+    color_t accent_color; int ring_radius, idle_fps; char layout[16]; char mono_font[64]; char dot_style[8]; color_t success_color; double vignette;
+    int blur_in, greeting, blink_colon, clock_bold;
 } config_t;
 
 void config_defaults(config_t *c);

@@ -37,6 +37,11 @@ static const opt_t opts[] = {
     O("bell_on_fail", T_BOOL, bell_on_fail), O("timeout", T_INT, timeout),
     O("message", T_STR, message), O("on_unlock", T_STR, on_unlock),
     O("theme", T_STR, theme), O("scale", T_DBL, scale),
+    O("layout", T_STR, layout), O("accent_color", T_COL, accent_color),
+    O("ring_radius", T_INT, ring_radius), O("idle_fps", T_INT, idle_fps), O("mono_font", T_STR, mono_font), O("dot_style", T_STR, dot_style),
+    O("success_color", T_COL, success_color), O("vignette", T_DBL, vignette),
+    O("blur_in", T_BOOL, blur_in), O("greeting", T_BOOL, greeting),
+    O("blink_colon", T_BOOL, blink_colon), O("clock_bold", T_BOOL, clock_bold),
 };
 
 int config_parse_color(const char *s, color_t *c)
@@ -66,7 +71,7 @@ void config_defaults(config_t *c)
     c->panel_border = 1; config_parse_color("#ffffff22", &c->panel_border_color);
     c->panel_shadow = 1;
     c->show_clock = 1; strcpy(c->clock_format, "%H:%M"); strcpy(c->date_format, "%A, %d %B");
-    c->clock_size = 64; c->date_size = 18;
+    c->clock_size = 0; c->date_size = 0;   /* 0 = auto per layout */
     config_parse_color("#ffffff", &c->clock_color); config_parse_color("#ffffffbb", &c->date_color);
     strcpy(c->password_char, "\xe2\x80\xa2"); c->input_radius = 10;
     config_parse_color("#ffffff15", &c->input_color);
@@ -76,6 +81,10 @@ void config_defaults(config_t *c)
     strcpy(c->font, "Inter"); c->font_size = 15; strcpy(c->clock_font, "Inter");
     c->fade_in_duration = 280; c->shake_intensity = 12; c->enable_animations = 1;
     c->bell_on_fail = 1;
+    strcpy(c->layout, "minimal"); config_parse_color("#7dd3fc", &c->accent_color);
+    c->ring_radius = 150; c->idle_fps = 30; strcpy(c->mono_font, "monospace"); strcpy(c->dot_style, "circle");
+    config_parse_color("#6ee7a8", &c->success_color);
+    c->vignette = 0.35; c->blur_in = 1; c->greeting = 1; c->blink_colon = 1; c->clock_bold = -1;
 }
 
 static char *trim(char *s)
