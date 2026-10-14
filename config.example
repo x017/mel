@@ -1,0 +1,18 @@
+# mel config - copy to ~/.config/mel/config
+# theme = nord           # nord | catppuccin | tokyo-night (or your own in ~/.config/mel/themes/)
+auth_service = login
+background = blur         # blur | dim | image | solid | gradient
+blur_strength = 0
+dim_strength = 0.55
+background_image = ~/Pictures/lock.png   # PNG only for now
+panel_width = 420
+panel_height = 280
+panel_radius = 18
+panel_opacity = 0.82
+clock_format = %H:%M
+date_format = %A, %d %B
+font = Inter
+fade_in_duration = 280
+shake_intensity = 12
+message =
+on_unlock =

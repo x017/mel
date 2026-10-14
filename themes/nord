@@ -1,0 +1,10 @@
+panel_color = #2e3440
+panel_border_color = #88c0d022
+background_color = #2e3440
+gradient_start = #2e3440
+gradient_end = #4c566a
+clock_color = #eceff4
+date_color = #d8dee9bb
+input_color = #eceff415
+input_text_color = #eceff4
+caps_lock_color = #bf616a

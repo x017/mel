@@ -1,0 +1,30 @@
+.TH MEL 1 "2026" "mel 0.1.0" "User Commands"
+.SH NAME
+mel \- a beautiful, customizable X11 screen locker
+.SH SYNOPSIS
+.B mel
+[\fIOPTIONS\fR]
+.SH DESCRIPTION
+mel covers every monitor with a fullscreen window, grabs keyboard and pointer, and unlocks after a successful PAM authentication. Use it with \fBxss-lock -- mel\fR.
+.SH OPTIONS
+.TP
+.BR \-c ", " \-\-config " " \fIfile\fR
+Use a custom config file.
+.TP
+.BR \-i ", " \-\-image " " \fIpath\fR
+Background image (PNG).
+.TP
+.BR \-b ", " \-\-background " " \fImode\fR
+blur, dim, image, solid or gradient.
+.TP
+.B \-\-blur \fIstrength\fR
+Blur strength.
+.TP
+.B \-\-no\-fade
+Disable animations.
+.SH FILES
+.I $XDG_CONFIG_HOME/mel/config, ~/.config/mel/config, /etc/mel.conf
+.br
+Themes: \fI~/.config/mel/themes/NAME\fR, \fIPREFIX/share/mel/themes/NAME\fR
+.SH SEE ALSO
+xss-lock(1), pam(8)
